@@ -1,0 +1,46 @@
+---
+title: Liquid's `date` filter, ported over to Nunjucks
+description: Recreating the Liquid `date` filter in Nunjucks using the **strftime** library.
+# permalink: "{{ page.date | date('%Y/%m/') }}"
+templateEngineOverride: "njk,md"
+---
+
+# {{ title | safe }}
+
+> {{ description | safe }}
+> ```js
+> // .eleventy.js
+> eleventyConfig.addFilter("date", (date=new Date(), format="%D") => strftime(format, date));
+> ```
+
+---
+
+## Example 1: Raw `page.date`
+```njk
+{% raw %}{{ page.date }}{% endraw %}
+{% output %}
+  {{ page.date }}
+{% endoutput %}
+```
+
+## Example 2: Display `page.date` using default date format
+```njk
+{% raw %}{{ page.date | date }}{% endraw %}
+{% output %}
+  {{ page.date | date | dump | safe }}
+{% endoutput %}
+```
+
+## Example 3: Display `page.date` using custom date format
+```njk
+{% raw %}{{ page.date | date("%Y/%m") }}{% endraw %}
+{% output %}
+  {{ page.date | date("%Y/%m") | dump | safe }}
+{% endoutput %}
+```
+
+<footer>
+  <hr />
+  <p>Eleventy: <code>{{ versions.eleventy }}</code></p>
+  <p>Nunjucks: <code>{{ versions.nunjucks }}</code></p>
+</footer>

@@ -1,0 +1,26 @@
+{
+  "name": "11ty-filter-strftime",
+  "description": "Recreating the Liquid 'date' filter in Nunjucks using the strftime library.",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/11ty-filter-strftime/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "strftime": "^0.10.0"
+  },
+  "homepage": "https://github.com/pdehaan/11ty-filter-strftime#readme",
+  "keywords": ["eleventy", "11ty", "nunjucks", "liquid", "filter", "date"],
+  "license": "MPL-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/11ty-filter-strftime.git"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
